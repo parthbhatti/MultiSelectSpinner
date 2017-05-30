@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.androidbuts.multispinnerfilter.KeyPairBoolData;
+import com.androidbuts.multispinnerfilter.MultiSpinner;
 import com.androidbuts.multispinnerfilter.MultiSpinnerSearch;
 import com.androidbuts.multispinnerfilter.SingleSpinner;
 import com.androidbuts.multispinnerfilter.SingleSpinnerSearch;
@@ -27,6 +28,16 @@ public class MainActivity extends AppCompatActivity {
          * Getting array of String to Bind in Spinner
          */
         final List<String> list = Arrays.asList(getResources().getStringArray(R.array.sports_array));
+
+        final List<KeyPairBoolData> listArray = new ArrayList<>();
+
+        for (int i = 0; i < list.size(); i++) {
+            KeyPairBoolData h = new KeyPairBoolData();
+            h.setId(i + 1);
+            h.setName(list.get(i));
+            h.setSelected(false);
+            listArray.add(h);
+        }
 
         final List<KeyPairBoolData> listArray0 = new ArrayList<>();
 
@@ -86,10 +97,24 @@ public class MainActivity extends AppCompatActivity {
          *
          *  Using MultiSpinnerSearch class
          */
+        MultiSpinner multiSpinner = (MultiSpinner) findViewById(R.id.simpleMultiSpinner);
         MultiSpinnerSearch searchMultiSpinnerUnlimited = (MultiSpinnerSearch) findViewById(R.id.searchMultiSpinnerUnlimited);
         MultiSpinnerSearch searchMultiSpinnerLimit = (MultiSpinnerSearch) findViewById(R.id.searchMultiSpinnerLimit);
         SingleSpinnerSearch searchSingleSpinner = (SingleSpinnerSearch) findViewById(R.id.searchSingleSpinner);
         SingleSpinner singleSpinner = (SingleSpinner) findViewById(R.id.singleSpinner);
+
+        multiSpinner.setItems(listArray, -1, new SpinnerListener() {
+
+            @Override
+            public void onItemsSelected(List<KeyPairBoolData> items) {
+
+                for (int i = 0; i < items.size(); i++) {
+                    if (items.get(i).isSelected()) {
+                        Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
+                    }
+                }
+            }
+        });
 
         searchMultiSpinnerUnlimited.setItems(listArray0, -1, new SpinnerListener() {
 

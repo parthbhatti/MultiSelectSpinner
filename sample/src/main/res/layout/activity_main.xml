@@ -9,8 +9,7 @@
         android:id="@+id/simpleMultiSpinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:visibility="gone"
+        android:layout_margin="10dp"
         app:hintText="Multi Selection" />
 
     <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
@@ -39,7 +38,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:hintText="Single Selection" />
+        app:hintText="Single Selection"/>
 
 
 </LinearLayout>

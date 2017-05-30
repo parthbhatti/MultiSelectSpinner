@@ -2,9 +2,7 @@
 <resources>
 
     <string name="app_name">Multiple Filter</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="type_to_search">Type to Search</string>
+
 
     <string-array name="sports_array">
         <item>Shuttle Badminton</item>

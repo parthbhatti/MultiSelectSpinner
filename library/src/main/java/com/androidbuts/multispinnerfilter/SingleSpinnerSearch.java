@@ -8,6 +8,7 @@ import android.content.DialogInterface.OnCancelListener;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -162,6 +163,7 @@ public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
 
 		builder.setOnCancelListener(this);
 		ad = builder.show();
+		ad.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 		return true;
 	}
 
@@ -229,16 +231,17 @@ public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
 			holder.textView = (TextView) convertView.findViewById(R.id.alertTextView);
 			convertView.setTag(holder);
 
-			if(position%2==0){
+			/*if(position%2==0){
 				convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_even));
 			}else{
 				convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_odd));
-			}
+			}*/
 
 			final KeyPairBoolData data = arrayList.get(position);
 
 			holder.textView.setText(data.getName());
 			holder.textView.setTypeface(null, Typeface.NORMAL);
+			holder.textView.setTextColor(ContextCompat.getColor(getContext(), R.color.ColorDarkGrey));
 
 			convertView.setOnClickListener(new OnClickListener()
 			{
@@ -261,8 +264,8 @@ public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
 
 			if(data.isSelected()){
 				holder.textView.setTypeface(null, Typeface.BOLD);
-				holder.textView.setTextColor(Color.WHITE);
-				convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_selected));
+				holder.textView.setTextColor(ContextCompat.getColor(getContext(), R.color.ColorPrimary));
+				//convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_selected));
 			}
 			return convertView;
 		}
