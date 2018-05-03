@@ -167,8 +167,8 @@ public class MultiSpinner extends AppCompatSpinner implements DialogInterface.On
 				spinnerBuffer.append(", ");
 			}
 		}
-		if (spinnerBuffer.length() > 2)
-			defaultText = spinnerBuffer.toString().substring(0, spinnerBuffer.toString().length() - 2);
+		//if (spinnerBuffer.length() > 2)
+		//	defaultText = spinnerBuffer.toString().substring(0, spinnerBuffer.toString().length() - 2);
 
 		ArrayAdapter<String> adapterSpinner = new ArrayAdapter<>(getContext(), R.layout.textview_for_spinner, new String[]{defaultText});
 		setAdapter(adapterSpinner);
