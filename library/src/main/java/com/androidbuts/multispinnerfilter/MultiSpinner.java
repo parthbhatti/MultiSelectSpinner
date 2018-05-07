@@ -252,10 +252,10 @@ public class MultiSpinner extends AppCompatSpinner implements DialogInterface.On
 				public void onClick(View v) {
 					if(data.isSelected()) { // deselect
 						selected--;
-					} else if(selected == limit) { // select with limit
+					/*} else if(selected == limit) { // select with limit
 						if(limitListener != null)
 							limitListener.onLimitListener(data);
-						return;
+						return;*/
 					} else { // selected
 						selected++;
 					}
