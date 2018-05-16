@@ -200,6 +200,7 @@ public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
 		LayoutInflater inflater;
 
 		public MyAdapter(Context context, List<KeyPairBoolData> arrayList) {
+			this.mOriginalValues = arrayList;
 			this.arrayList = arrayList;
 			inflater = LayoutInflater.from(context);
 		}
@@ -247,6 +248,11 @@ public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
 			{
 				public void onClick(View v)
 				{
+					//arrayList = mOriginalValues;
+					for (int i = 0; i<mOriginalValues.size(); i++) {
+						mOriginalValues.get(i).setSelected(false);
+					}
+
 					int len = arrayList.size();
 					for (int i = 0; i < len; i++)
 					{
