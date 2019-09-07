@@ -65,7 +65,7 @@ public class MultiSpinner extends AppCompatSpinner implements DialogInterface.On
     public void setDefaultText(String defaultText) {
         this.defaultText = defaultText;
     }
-	
+
 	public void setLimit(int limit, MultiSpinner.LimitExceedListener listener) {
 		this.limit = limit;
 		this.limitListener = listener;

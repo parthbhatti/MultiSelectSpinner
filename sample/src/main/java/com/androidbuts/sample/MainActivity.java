@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         SingleSpinnerSearch searchSingleSpinner = (SingleSpinnerSearch) findViewById(R.id.searchSingleSpinner);
         SingleSpinner singleSpinner = (SingleSpinner) findViewById(R.id.singleSpinner);
 
+        multiSpinner.setDefaultText("thi sis hint");
         multiSpinner.setItems(listArray, -1, new SpinnerListener() {
 
             @Override
